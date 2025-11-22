@@ -4,16 +4,16 @@ description: "秘密のサイトです^^決して口外しないこと"
 url: "https://uyu77777.github.io"
 baseurl: ""  # ユーザーサイトなので空にする
 
-remote_theme: pages-themes/cayman@v0.2.0
+# remote_theme: pages-themes/cayman@v0.2.0
 
-plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+# plugins:
+# - jekyll-remote-theme # add this line to the plugins list if you already have one
 
 # Markdown の設定
 markdown: kramdown
 
 # 投稿関連
-paginate: 5  # 1ページに表示する記事数
+paginate: 0  # 1ページに表示する記事数
 
 # 他の設定
 author: "kai"
