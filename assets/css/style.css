@@ -1,0 +1,21 @@
+/* 記事タイトル */
+.post-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #222222;
+    margin-bottom: 0.2em;
+}
+
+/* 日付 */
+.post-date {
+    font-size: 0.9em;
+    color: #888888;
+    margin-bottom: 0.5em;
+}
+
+/* 記事本文 */
+.post-content {
+    font-size: 1em;
+    color: #333333;
+    line-height: 1.6;
+}

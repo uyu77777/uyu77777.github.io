@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+
+<body>
+    <header>
+        <h1 style="text-align:center;">{{ site.title }}</h1>
+    </header>
+
+    <main>
+        <!-- トップ文章 -->
+        {{ content }}
+
+        <!-- 記事一覧 -->
+        {% for post in site.posts %}
+        <article>
+            <h2 class="post-title">{{ post.title }}</h2>
+            <p class="post-date">{{ post.date | date: "%Y-%m-%d" }}</p>
+            <div class="post-content">{{ post.content }}</div>
+        </article>
+        <hr>
+        {% endfor %}
+    </main>
+
+    <footer>
+        <p>&copy; Kai</p>
+    </footer>
+</body>
+
+</html>
