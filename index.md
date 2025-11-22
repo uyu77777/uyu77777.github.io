@@ -2,15 +2,17 @@
 layout: default
 ---
 
-<p style="text-align: center; font-size: 1.5em;">やあやあブログだよ</p>
+<p class="top-message">やあやあブログだよ</p>
+
 
 <ul>
   {% for post in site.posts %}
     <li>
-      <h2>{{ post.title }}</h2>
-      <p>{{ post.date | date: "%Y-%m-%d" }}</p>
-      <div>{{ post.content }}</div>
+      <h2 class="post-title">{{ post.title }}</h2>
+      <p class="post-date">{{ post.date | date: "%Y-%m-%d" }}</p>
+      <div class="post-content">{{ post.content }}</div>
     </li>
   {% endfor %}
 </ul>
+
 
