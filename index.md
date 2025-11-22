@@ -5,13 +5,17 @@ title: home
 
 
 <section class="posts">
-{% for post in site.posts reversed %}
+{% assign sorted_posts = site.posts | sort: "date" | reverse %}
+{% for post in sorted_posts %}
+
+<!-- {% for post in site.posts reversed %} -->
 <article class="post">
 <h2 class="post-title">{{ post.title }}</h2>
 
 <div class="post-meta">
-    {{ post.date | date: "%Y-%m-%d %H:%M" }} ・ {{ post.categories | join: ", " }}
+    {{ post.date | date: "%Y-%m-%d %H:%M" }}
 </div>
+
 
 <div class="post-excerpt">
   {{ post.excerpt | strip_html }}

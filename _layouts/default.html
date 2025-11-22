@@ -28,8 +28,9 @@
         <div class="container">© {{ site.title }} · {{ "now" | date: "%Y" }}</div>
     </footer>
 
+    <button class="good-btn">👍 Good</button>
 
-    <script>
+    <!-- <script>
         document.addEventListener('click', function (e) {
             if (e.target && e.target.classList.contains('toggle')) {
                 const post = e.target.closest('.post');
@@ -43,7 +44,18 @@
                 }
             }
         });
+    </script> -->
+
+    <script>
+        document.addEventListener('click', function (e) {
+            if (e.target.classList.contains('good-btn')) {
+                let count = parseInt(e.target.dataset.count || 0) + 1;
+                e.target.dataset.count = count;
+                e.target.textContent = `👍 Good (${count})`;
+            }
+        });
     </script>
+
 
 
 </body>

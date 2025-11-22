@@ -17,10 +17,11 @@ body {
 }
 
 .header {
-    background-color: #2563eb !important;
-    /* 確実反映 */
+    background: linear-gradient(90deg, #2563eb, #3b82f6) !important;
     color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
+
 
 .banner {
     background-color: inherit;
@@ -119,4 +120,20 @@ footer {
     .logo {
         font-size: 22px;
     }
+}
+
+.good-btn {
+    margin-top: 12px;
+    background: none;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.good-btn:hover {
+    background: var(--accent);
+    color: #fff;
 }
