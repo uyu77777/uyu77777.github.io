@@ -4,7 +4,6 @@ url: "https://uyu77777.github.io"
 baseurl: ""
 
 markdown: kramdown
-author: "kai"
 
 plugins:
   - jekyll-paginate
@@ -12,6 +11,8 @@ plugins:
 paginate: 5
 paginate_path: "/page:num"
 
-sort: "date"
-order: "descending"
+author: "kai"
+
+sort: 'date'
+order: 'descending'
 
