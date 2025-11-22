@@ -13,16 +13,19 @@ title: home
     {{ post.date | date: "%Y-%m-%d %H:%M" }} ・ {{ post.categories | join: ", " }}
 </div>
 
+<div class="post-excerpt">
+  {{ post.excerpt | strip_html }}
+</div>
 
-<div class="post-excerpt">{{ post.excerpt | strip_html | truncate: 300 }}</div>
 
+<div class="full-content" style="display:none;">
+  {{ post.content | remove: post.excerpt }}
+</div>
 
 <button class="toggle">続きを読む</button>
-
-
-<div class="full-content" style="display:none;">{{ post.content }}</div>
 </article>
 {% endfor %}
+
 
 
 {% if site.posts == empty %}

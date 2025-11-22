@@ -17,16 +17,19 @@ body {
 }
 
 .header {
-    background: linear-gradient(90deg, #2563eb, #60a5fa);
-    /* 青系グラデーション例 */
-    border-bottom: 1px solid #eee;
+    background-color: #2563eb !important;
+    /* 確実反映 */
     color: #fff;
+}
+
+.banner {
+    background-color: inherit;
 }
 
 .header .muted {
     color: #e5e7eb;
-    /* グレー文字色の補正 */
 }
+
 
 .container {
     max-width: var(--max-width);
@@ -101,7 +104,7 @@ body {
 }
 
 footer {
-    border-top: 1px solid #f0f0f0;
+    border-top: 1px solid #933b3b;
     padding: 20px 0;
     color: var(--muted);
     font-size: 13px;
