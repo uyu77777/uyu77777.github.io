@@ -3,7 +3,6 @@ layout: default
 title: "あいうえお、これはテストです"
 ---
 
-# あいうえお、これはテストです
 
-Hello world!!
+Hello world!!　　
 テストだよ
