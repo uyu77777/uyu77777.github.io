@@ -23,9 +23,7 @@ sort: 'date'
 order: 'descending'
 
 plugins:
-  - jekyll-paginate-v2
+  - jekyll-paginate
 
-pagination:
-  enabled: true
-  per_page: 5
-  permalink: '/page/:num/'
+paginate: 5             # 1ページに表示する記事数
+paginate_path: "/page:num"

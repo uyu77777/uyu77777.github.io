@@ -1,60 +1,52 @@
 ---
 layout: default
-pagination:
-  enabled: true
-  per_page: 5
-title: Home
+title: home
 ---
 
 <div class="layout">
-  <!-- サイドバー -->
+  <!-- 左サイドの目次 -->
   <aside class="sidebar">
     <h3>目次</h3>
     <ul>
       {% for post in paginator.posts %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
       {% endfor %}
     </ul>
   </aside>
 
-  <!-- メイン記事部分 -->
-  <main class="main-content">
+  <!-- 記事一覧 -->
+  <section class="posts">
     {% for post in paginator.posts %}
-    <article class="post-card">
-      <h2 class="post-title">
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      </h2>
+    <article class="post">
+      <h2 class="post-title">{{ post.title }}</h2>
 
       <div class="post-meta">
         {{ post.date | date: "%Y-%m-%d %H:%M" }}
       </div>
 
-      <p>{{ post.excerpt | strip_html }}</p>
+      <div class="post-excerpt">{{ post.excerpt | strip_html }}</div>
+      <a class="read-more" href="{{ post.url }}">続きを読む</a>
 
       <button class="good-btn" data-id="{{ post.url }}">👍 Good</button>
     </article>
     {% endfor %}
 
-    <!-- ページネーション -->
-    <div class="pagination">
+    {% if paginator.total_pages > 1 %}
+    <nav class="pagination">
       {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}">Prev</a>
+      <a href="{{ paginator.previous_page_path | relative_url }}">前へ</a>
       {% endif %}
 
-      {% for page in (1..paginator.total_pages) %}
-      {% if page == paginator.page %}
-      <span class="current">{{ page }}</span>
-      {% else %}
-      <a href="{{ paginator.paginate_path | replace: ':num', page }}">{{ page }}</a>
-      {% endif %}
-      {% endfor %}
+      <span>{{ paginator.page }} / {{ paginator.total_pages }}</span>
 
       {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}">Next</a>
+      <a href="{{ paginator.next_page_path | relative_url }}">次へ</a>
       {% endif %}
-    </div>
-  </main>
+    </nav>
+    {% endif %}
+  </section>
 </div>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
