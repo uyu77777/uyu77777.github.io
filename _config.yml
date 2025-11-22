@@ -5,14 +5,12 @@ baseurl: ""
 
 markdown: kramdown
 
+author: "kai"
+
 plugins:
   - jekyll-paginate
 
 paginate: 5
-paginate_path: "/page:num"
+paginate_path: "page:num"
 
-author: "kai"
-
-sort: 'date'
-order: 'descending'
 
