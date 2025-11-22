@@ -1,26 +1,73 @@
 ---
 layout: default
-title: home
+pagination:
+  enabled: true
+  per_page: 5
+title: Home
 ---
 
+<div class="layout">
+  <!-- サイドバー -->
+  <aside class="sidebar">
+    <h3>目次</h3>
+    <ul>
+      {% for post in paginator.posts %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </aside>
 
-<section class="posts">
-{% assign sorted_posts = site.posts | sort: "date" | reverse %}
-{% for post in sorted_posts %}
-<article class="post">
-    <h2 class="post-title">{{ post.title }}</h2>
+  <!-- メイン記事部分 -->
+  <main class="main-content">
+    {% for post in paginator.posts %}
+    <article class="post-card">
+      <h2 class="post-title">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </h2>
 
-    <div class="post-meta">{{ post.date | date: "%Y-%m-%d %H:%M" }}</div>
+      <div class="post-meta">
+        {{ post.date | date: "%Y-%m-%d %H:%M" }}
+      </div>
 
-    <div class="post-excerpt">{{ post.excerpt | strip_html }}</div>
+      <p>{{ post.excerpt | strip_html }}</p>
 
-    <div class="full-content" style="display:none;">
-        {{ post.content | remove: post.excerpt }}
+      <button class="good-btn" data-id="{{ post.url }}">👍 Good</button>
+    </article>
+    {% endfor %}
+
+    <!-- ページネーション -->
+    <div class="pagination">
+      {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}">Prev</a>
+      {% endif %}
+
+      {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+      <span class="current">{{ page }}</span>
+      {% else %}
+      <a href="{{ paginator.paginate_path | replace: ':num', page }}">{{ page }}</a>
+      {% endif %}
+      {% endfor %}
+
+      {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}">Next</a>
+      {% endif %}
     </div>
+  </main>
+</div>
 
-    <button class="good-btn">👍 Good</button>
-</article>
-{% endfor %}
-</section>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".good-btn").forEach(button => {
+    const id = button.dataset.id;
+    const saved = localStorage.getItem("good-" + id) || 0;
+    button.textContent = `👍 Good (${saved})`;
 
-
+    button.addEventListener("click", () => {
+      const updated = parseInt(localStorage.getItem("good-" + id) || 0) + 1;
+      localStorage.setItem("good-" + id, updated);
+      button.textContent = `👍 Good (${updated})`;
+    });
+  });
+});
+</script>

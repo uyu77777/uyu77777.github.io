@@ -22,3 +22,10 @@ author: "kai"
 sort: 'date'
 order: 'descending'
 
+plugins:
+  - jekyll-paginate-v2
+
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: '/page/:num/'

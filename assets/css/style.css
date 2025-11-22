@@ -137,3 +137,63 @@ footer {
     background: var(--accent);
     color: #fff;
 }
+
+.layout {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sidebar {
+    width: 220px;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 12px;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.sidebar ul {
+    padding-left: 10px;
+}
+
+.main-content {
+    width: 700px;
+}
+
+.post-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.good-btn {
+    margin-top: 15px;
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #e8f0ff;
+}
+
+.pagination {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.pagination a,
+.pagination .current {
+    padding: 5px 10px;
+    border-radius: 6px;
+    background: #eee;
+}
+
+.pagination .current {
+    background: #006CFF;
+    color: white;
+}
