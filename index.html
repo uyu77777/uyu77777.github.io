@@ -25,8 +25,8 @@ title: home
       </div>
 
       <div class="post-excerpt">{{ post.excerpt | strip_html }}</div>
-      <a class="read-more" href="{{ post.url }}">続きを読む</a>
 
+      <a class="read-more" href="{{ post.url }}">続きを読む</a>
       <button class="good-btn" data-id="{{ post.url }}">👍 Good</button>
     </article>
     {% endfor %}
@@ -46,7 +46,6 @@ title: home
     {% endif %}
   </section>
 </div>
-
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
