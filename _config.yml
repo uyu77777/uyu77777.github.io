@@ -18,3 +18,7 @@ paginate: 0  # 1ページに表示する記事数
 # 他の設定
 author: "kai"
 
+# 投稿を新しい順に
+sort: 'date'
+order: 'descending'
+

@@ -8,7 +8,10 @@ title: home
 {% for post in site.posts reversed %}
 <article class="post">
 <h2 class="post-title">{{ post.title }}</h2>
-<div class="post-meta">{{ post.date | date: "%Y-%m-%d" }} ・ {{ post.categories | join: ", " }}</div>
+
+<div class="post-meta">
+    {{ post.date | date: "%Y-%m-%d %H:%M" }} ・ {{ post.categories | join: ", " }}
+</div>
 
 
 <div class="post-excerpt">{{ post.excerpt | strip_html | truncate: 300 }}</div>

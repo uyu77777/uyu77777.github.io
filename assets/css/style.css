@@ -17,8 +17,15 @@ body {
 }
 
 .header {
-    background: linear-gradient(90deg, #ffffff, #f8fafc);
+    background: linear-gradient(90deg, #2563eb, #60a5fa);
+    /* 青系グラデーション例 */
     border-bottom: 1px solid #eee;
+    color: #fff;
+}
+
+.header .muted {
+    color: #e5e7eb;
+    /* グレー文字色の補正 */
 }
 
 .container {
@@ -68,9 +75,11 @@ body {
 
 .post-meta {
     color: var(--muted);
-    font-size: 13px;
+    font-size: 12px;
+    text-align: right;
     margin-bottom: 10px;
 }
+
 
 .post-excerpt {
     line-height: 1.9;
