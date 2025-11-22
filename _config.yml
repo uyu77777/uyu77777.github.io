@@ -1,0 +1,22 @@
+# サイトの基本情報
+title: "Kai.log"
+description: "自分の日記サイト"
+url: "https://uyu77777.github.io"
+baseurl: ""  # ユーザーサイトなので空にする
+
+# リモートテーマ指定
+remote_theme: pages-themes/slate@v0.2.0
+
+# プラグイン
+plugins:
+  - jekyll-remote-theme
+
+# Markdown の設定
+markdown: kramdown
+
+# 投稿関連
+paginate: 5  # 1ページに表示する記事数
+
+# 他の設定
+author: "kai"
+
