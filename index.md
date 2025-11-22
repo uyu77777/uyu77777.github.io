@@ -4,7 +4,6 @@ title: home
 ---
 
 <div class="layout">
-  <!-- 左サイドの目次 -->
   <aside class="sidebar">
     <h3>目次</h3>
     <ul>
@@ -14,7 +13,6 @@ title: home
     </ul>
   </aside>
 
-  <!-- 記事一覧 -->
   <section class="posts">
     {% for post in paginator.posts %}
     <article class="post">
@@ -25,7 +23,7 @@ title: home
       </div>
 
       <div class="post-excerpt">{{ post.excerpt | strip_html }}</div>
-      <a class="read-more" href="{{ post.url }}">続きを読む</a>
+      <a class="read-more" href="{{ post.url | relative_url }}">続きを読む</a>
 
       <button class="good-btn" data-id="{{ post.url }}">👍 Good</button>
     </article>
@@ -46,7 +44,6 @@ title: home
     {% endif %}
   </section>
 </div>
-
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
