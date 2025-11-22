@@ -13,8 +13,8 @@
     <header class="header">
         <div class="container banner">
             <div class="brand">
-                <div class="logo">uryu.log</div>
-                <div class="muted">日々の考え・読書感想・雑記</div>
+                <div class="logo">Uryu.log</div>
+                <div class="muted">秘密のサイトです^^決して口外しないこと</div>
             </div>
         </div>
     </header>
@@ -24,16 +24,14 @@
         {{ content }}
     </main>
 
-
     <footer>
         <div class="container">© {{ site.title }} · {{ "now" | date: "%Y" }}</div>
     </footer>
 
 
     <script>
-        // トグルで記事の全文表示／非表示を切り替える
         document.addEventListener('click', function (e) {
-            if (e.target && e.target.classList && e.target.classList.contains('toggle')) {
+            if (e.target && e.target.classList.contains('toggle')) {
                 const post = e.target.closest('.post');
                 const full = post.querySelector('.full-content');
                 if (full.style.display === 'none' || !full.style.display) {
