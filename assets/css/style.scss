@@ -1,28 +1,26 @@
 @import 'jekyll-theme-cayman';
 
 .post-title {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #222222;
-    margin-bottom: 0.2em;
+    font-size: 1.8em !important;
+    font-weight: bold !important;
+    color: #222222 !important;
+    margin-bottom: 0.2em !important;
 }
 
-/* 日付 */
 .post-date {
-    font-size: 0.9em;
-    color: #888888;
-    margin-bottom: 0.5em;
+    font-size: 0.9em !important;
+    color: #888888 !important;
+    margin-bottom: 0.5em !important;
 }
 
-/* 記事本文 */
 .post-content {
-    font-size: 1em;
-    color: #333333;
-    line-height: 1.6;
+    font-size: 1em !important;
+    color: #333333 !important;
+    line-height: 1.6 !important;
 }
 
 .top-message {
-    text-align: center;
-    font-size: 1.5em;
-    margin-bottom: 1em;
+    text-align: center !important;
+    font-size: 1.5em !important;
+    margin-bottom: 1em !important;
 }
