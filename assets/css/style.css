@@ -99,3 +99,24 @@ footer {
     font-size: 13px;
     text-align: center;
 }
+
+.main-logo {
+    font-size: 42px;
+    /* 大きく */
+    font-weight: 900;
+    /* 太く */
+    text-align: center;
+    /* 中央寄せ */
+    width: 100%;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    /* 縦並び */
+    align-items: center;
+    /* 中央寄せ */
+    text-align: center;
+}
