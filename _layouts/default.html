@@ -7,7 +7,6 @@
     <title>{{ page.title | default: site.title }}</title>
     <meta name="description" content="{{ page.description | default: site.description }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=1.5' | relative_url }}">
-
 </head>
 
 <body>
@@ -20,45 +19,18 @@
         </div>
     </header>
 
-
     <main class="container">
+        <!-- 記事ページではタイトルを表示 -->
+        {% if page.layout == "post" %}
+        <h1 class="post-title">{{ page.title }}</h1>
+        {% endif %}
+
         {{ content }}
     </main>
 
     <footer>
         <div class="container">© {{ site.title }} · {{ "now" | date: "%Y" }}</div>
     </footer>
-
-    <button class="good-btn">👍 Good</button>
-
-    <!-- <script>
-        document.addEventListener('click', function (e) {
-            if (e.target && e.target.classList.contains('toggle')) {
-                const post = e.target.closest('.post');
-                const full = post.querySelector('.full-content');
-                if (full.style.display === 'none' || !full.style.display) {
-                    full.style.display = 'block';
-                    e.target.textContent = '閉じる';
-                } else {
-                    full.style.display = 'none';
-                    e.target.textContent = '続きを読む';
-                }
-            }
-        });
-    </script> -->
-
-    <script>
-        document.addEventListener('click', function (e) {
-            if (e.target.classList.contains('good-btn')) {
-                let count = parseInt(e.target.dataset.count || 0) + 1;
-                e.target.dataset.count = count;
-                e.target.textContent = `👍 Good (${count})`;
-            }
-        });
-    </script>
-
-
-
 
 </body>
 

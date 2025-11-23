@@ -227,3 +227,7 @@ footer {
     margin-top: 12px;
     display: inline-block;
 }
+
+.good-btn {
+    position: static !important;
+}
