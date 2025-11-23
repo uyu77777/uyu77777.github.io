@@ -248,3 +248,16 @@ body {
         max-width: 95%;
     }
 }
+
+/* ================================
+   Footer (はてなブログ風)
+================================ */
+.site-footer {
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 60px;
+    font-size: 14px;
+    color: var(--muted);
+    border-top: 1px solid #e5e7eb;
+    /* 薄いグレーの上線 */
+}
