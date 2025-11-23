@@ -116,13 +116,10 @@ body {
 
 /* 記事ページ本文 */
 .post-content {
-    white-space: pre-line;
-    line-height: 1.0;
-    /* 行間半分に */
+    line-height: 1.7;
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
-    /* 左右余白 */
 }
 
 /* Good Button */
