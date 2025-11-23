@@ -2,16 +2,14 @@
 layout: default
 ---
 
-<main class="container">
-    <article class="post-card">
-        <h1 class="post-title">{{ page.title }}</h1>
+<article class="post">
+    <h1 class="post-title">{{ page.title }}</h1>
 
-        <div class="post-meta">
-            {{ page.date | date: "%Y-%m-%d %H:%M" }}
-        </div>
+    <div class="post-meta">
+        {{ page.date | date: "%Y-%m-%d %H:%M" }}
+    </div>
 
-        <div class="post-body">
-            {{ content }}
-        </div>
-    </article>
-</main>
+    <div class="post-content">
+        {{ content }}
+    </div>
+</article>

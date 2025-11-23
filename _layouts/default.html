@@ -13,20 +13,15 @@
     <header class="header">
         <div class="container banner">
             <div class="brand">
-                <div class="logo">Uryu.log</div>
+                <a href="{{ '/' | relative_url }}" class="logo">Uryu.log</a>
                 <div class="muted">秘密のサイトです^^決して口外しないこと</div>
             </div>
         </div>
     </header>
 
-    <!-- <main class="container">
-        #記事ページではタイトルを表示
-        {% if page.layout == "post" %}
-        <h1 class="post-title">{{ page.title }}</h1>
-        {% endif %}
-
+    <main class="container">
         {{ content }}
-    </main> -->
+    </main>
 
     <footer>
         <div class="container">© {{ site.title }} · {{ "now" | date: "%Y" }}</div>
