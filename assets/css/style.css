@@ -112,6 +112,11 @@ footer {
     margin-bottom: 6px;
 }
 
+.main-content {
+    padding: 0 24px;
+    /* PCでも読みやすい余白 */
+}
+
 .brand {
     display: flex;
     flex-direction: column;
@@ -119,4 +124,23 @@ footer {
     align-items: center;
     /* 中央寄せ */
     text-align: center;
+}
+
+.post-excerpt,
+.post-content {
+    white-space: pre-line;
+    /* 改行反映 */
+    line-height: 1.8;
+    /* 行間 */
+    margin-bottom: 20px;
+}
+
+@media (min-width: 1024px) {
+    .main-content {
+        max-width: 900px;
+        /* 読みやすい幅 */
+        margin: 0 auto;
+        /* 中央寄せ */
+        padding: 0 32px;
+    }
 }
