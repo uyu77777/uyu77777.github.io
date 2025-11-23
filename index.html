@@ -6,7 +6,7 @@ title: home
 <div class="layout">
   <!-- 左サイドの目次 -->
   <aside class="sidebar">
-    <h3>目次</h3>
+    <h3>このページの記事</h3>
     <ul>
       {% for post in paginator.posts %}
       <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
