@@ -10,8 +10,10 @@
 </head>
 
 <body>
+
+    <!-- ここはフル幅で固定 -->
     <header class="header">
-        <div class="container banner">
+        <div class="banner">
             <div class="brand">
                 <a href="{{ '/' | relative_url }}" class="logo">Uryu.log</a>
                 <div class="muted">秘密のサイトです^^決して口外しないこと</div>
@@ -19,9 +21,12 @@
         </div>
     </header>
 
-    <main class="container">
-        {{ content }}
-    </main>
+    <!-- index も post も同じレイアウト内で表示-->
+    <div class="layout">
+        <main class="main-content">
+            {{ content }}
+        </main>
+    </div>
 
     <footer>
         <div class="container">© {{ site.title }} · {{ "now" | date: "%Y" }}</div>
