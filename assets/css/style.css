@@ -66,9 +66,13 @@ body {
 }
 
 .post-excerpt {
-    line-height: 1.9;
-    margin-bottom: 12px;
+    white-space: pre-line;
+    /* 改行を反映 */
+    line-height: 1.7;
+    /* 行間少し広め */
+    margin-bottom: 20px;
 }
+
 
 .read-more {
     display: inline-block;
@@ -114,8 +118,13 @@ footer {
 
 .main-content {
     padding: 0 24px;
-    /* PCでも読みやすい余白 */
+    /* 左右に24pxの余白 */
+    max-width: 800px;
+    /* 幅制限 */
+    margin: 0 auto;
+    /* 中央寄せ */
 }
+
 
 .brand {
     display: flex;
@@ -126,7 +135,6 @@ footer {
     text-align: center;
 }
 
-.post-excerpt,
 .post-content {
     white-space: pre-line;
     /* 改行反映 */
