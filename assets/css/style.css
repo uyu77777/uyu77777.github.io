@@ -152,3 +152,36 @@ footer {
         padding: 0 32px;
     }
 }
+
+.layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    /* 左250px / 右残り */
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.sidebar {
+    position: sticky;
+    top: 120px;
+    align-self: start;
+}
+
+/* 移動先記事本文 */
+.main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    /* 左右に余白 */
+    line-height: 1.4;
+    /* 行間を半分に縮小 */
+}
+
+/* トップページプレビュー改行対応 */
+.post-excerpt {
+    white-space: pre-line;
+    line-height: 1.4;
+    /* 行間調整 */
+}
