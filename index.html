@@ -1,10 +1,10 @@
----
+<!-- ---
 layout: default
 title: home
 ---
 
 <div class="layout">
-  <!-- 左サイドの目次 -->
+  
   <aside class="sidebar">
     <h3>このページの記事</h3>
     <ul>
@@ -14,7 +14,7 @@ title: home
     </ul>
   </aside>
 
-  <!-- 記事一覧 -->
+  
   <main class="main-content">
     <section class="posts">
       {% for post in paginator.posts %}
@@ -45,4 +45,58 @@ title: home
       {% endif %}
     </section>
   </main>
+</div> -->
+
+---
+layout: default
+title: home
+---
+
+
+<div class="layout">
+  <!-- 左サイドの目次（全ページ共通のサイドバーとしても使いやすい構造） -->
+  <aside class="sidebar">
+    <h3>このページの記事</h3>
+    <ul>
+      {% for post in paginator.posts %}
+      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </aside>
+
+
+  <!-- 記事一覧（main は _layouts/default.html にあるためここでは section にする） -->
+  <section class="posts-area">
+    <div class="posts">
+      {% for post in paginator.posts %}
+      <article class="post-card">
+        <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+
+
+        <div class="post-meta">{{ post.date | date: "%Y-%m-%d %H:%M" }}</div>
+
+
+        <div class="post-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</div>
+
+
+        <a class="read-more" href="{{ post.url | relative_url }}">続きを読む</a>
+        <!-- いいねボタンは表示だけ残す（機能は触らない） -->
+        <button class="good-btn" data-id="{{ post.url }}">👍 Good</button>
+      </article>
+      {% endfor %}
+
+
+      {% if paginator.total_pages > 1 %}
+      <nav class="pagination">
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | relative_url }}">前へ</a>
+        {% endif %}
+        <span>{{ paginator.page }} / {{ paginator.total_pages }}</span>
+        {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | relative_url }}">次へ</a>
+        {% endif %}
+      </nav>
+      {% endif %}
+    </div>
+  </section>
 </div>
